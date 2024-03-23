@@ -1,5 +1,0 @@
-docker run -d -it --name oradb-ee-12.2 \
--p 1521:1521 -p 5500:5500 \
--v /opt/oracle/database/12.2.0.1-ee:/ORCL \
---env-file ./oradb-ee-12.2.db.env.list \
-store/oracle/database-enterprise:12.2.0.1

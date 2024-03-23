@@ -1,4 +1,0 @@
-[Mac M1]
-docker run --name=mysql -p 13306:3306 --restart=always -e MYSQL_ROOT_PASSWORD=Root@3358 -d arm64v8/mysql:8.0.30
-[Linux]
-docker run --name=mysql -p 13306:3306 --restart=always -e MYSQL_ROOT_PASSWORD=Root@3358 -d mysql:8.0.30

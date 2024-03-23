@@ -1,1 +1,0 @@
-docker exec -it oradb-ee-12.2-slim bash -c "source /home/oracle/.bashrc; sqlplus / as sysdba"

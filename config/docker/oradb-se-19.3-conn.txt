@@ -1,2 +1,0 @@
-docker run --name oradb-se-19.3 --rm -it oracle/database:19.3.0-se2 sqlplus pdbadmin/root3358@//localhost:1521/dbcrudgen
-docker exec -it oradb-se-19.3 sqlplus pdbadmin@dbcrudgen

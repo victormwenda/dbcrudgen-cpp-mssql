@@ -1,4 +1,0 @@
-docker exec -it oradb-ee-12.2 bash -c "source /home/oracle/.bashrc; sqlplus / as sysdba"
-
-#Change password
-docker exec <container name> ./setPassword.sh <your password>
