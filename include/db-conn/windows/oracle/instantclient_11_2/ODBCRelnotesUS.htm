@@ -1,955 +1,0 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html xmlns:v="urn:schemas-microsoft-com:vml"
- xmlns:o="urn:schemas-microsoft-com:office:office"
- xmlns:w="urn:schemas-microsoft-com:office:word"
- xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
- xmlns="http://www.w3.org/TR/REC-html40">
-<head>
-  <meta http-equiv="Content-Type"
- content="text/html; charset=windows-1252">
-  <meta name="ProgId" content="Word.Document">
-  <meta name="Generator" content="Microsoft Word 9">
-  <meta name="Originator" content="Microsoft Word 9">
-  <link rel="File-List" href="./ODBCRelnotesUS_files/filelist.xml">
-  <title>Oracle ODBC Driver 11</title>
-<!--[if gte mso 9]><xml>
- <o:DocumentProperties>
-  <o:Template>Normal</o:Template>
-  <o:LastAuthor>user</o:LastAuthor>
-  <o:Revision>133</o:Revision>
-  <o:TotalTime>4243</o:TotalTime>
-  <o:Created>2002-12-06T19:32:00Z</o:Created>
-  <o:LastSaved>2009-05-21T13:27:00Z</o:LastSaved>
-  <o:Pages>8</o:Pages>
-  <o:Words>2403</o:Words>
-  <o:Characters>13701</o:Characters>
-  <o:Company>Oracle Corporation</o:Company>
-  <o:Lines>114</o:Lines>
-  <o:Paragraphs>27</o:Paragraphs>
-  <o:CharactersWithSpaces>16825</o:CharactersWithSpaces>
-  <o:Version>9.6926</o:Version>
- </o:DocumentProperties>
-</xml><![endif]--><!--[if gte mso 9]><xml>
- <w:WordDocument>
-  <w:View>Print</w:View>
-  <w:DoNotShowRevisions/>
-  <w:DoNotPrintRevisions/>
-  <w:HyphenationZone>0</w:HyphenationZone>
-  <w:DoNotHyphenateCaps/>
-  <w:DrawingGridHorizontalSpacing>6 pt</w:DrawingGridHorizontalSpacing>
-  <w:DrawingGridVerticalSpacing>6 pt</w:DrawingGridVerticalSpacing>
-  <w:DisplayVerticalDrawingGridEvery>0</w:DisplayVerticalDrawingGridEvery>
-  <w:UseMarginsForDrawingGridOrigin/>
-  <w:DoNotShadeFormData/>
-  <w:Compatibility>
-   <w:BalanceSingleByteDoubleByteWidth/>
-   <w:DoNotLeaveBackslashAlone/>
-   <w:ULTrailSpace/>
-   <w:DoNotExpandShiftReturn/>
-   <w:UsePrinterMetrics/>
-   <w:WW6BorderRules/>
-   <w:FootnoteLayoutLikeWW8/>
-   <w:ShapeLayoutLikeWW8/>
-   <w:AlignTablesRowByRow/>
-   <w:ForgetLastTabAlignment/>
-   <w:AutoSpaceLikeWord95/>
-   <w:LayoutRawTableWidth/>
-   <w:LayoutTableRowsApart/>
-   <w:UseWord97LineBreakingRules/>
-  </w:Compatibility>
-  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
-  <w:SpellingState>Clean</w:SpellingState>
-  <w:GrammarState>Clean</w:GrammarState>
-  <w:DoNotShowMarkup/>
- </w:WordDocument>
-</xml><![endif]-->
-  <style>
-<!--
-@page
-	{mso-footnote-position:end-of-section;}
-div.SECTION1
-	{mso-footnote-position:end-of-section;}
-span.SPELLE
-	{mso-spl-e:yes;}
-span.GRAME
-	{mso-gram-e:yes;}
- /* Font Definitions */
-@font-face
-	{font-family:Helvetica;
-	panose-1:2 11 6 4 2 2 2 2 2 4;
-	mso-font-charset:0;
-	mso-generic-font-family:swiss;
-	mso-font-pitch:variable;
-	mso-font-signature:536902279 -2147483648 8 0 511 0;}
-@font-face
-	{font-family:"Arial Unicode MS";
-	mso-font-alt:Tahoma;
-	mso-font-charset:128;
-	mso-generic-font-family:swiss;
-	mso-font-pitch:variable;
-	mso-font-signature:-1 -369098753 63 0 4129023 0;}
-@font-face
-	{font-family:"\@Arial Unicode MS";
-	mso-font-charset:128;
-	mso-generic-font-family:swiss;
-	mso-font-pitch:variable;
-	mso-font-signature:-1 -369098753 63 0 4129023 0;}
- /* Style Definitions */
-p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{mso-style-parent:"";
-	margin:0in;
-	margin-bottom:.0001pt;
-	mso-pagination:widow-orphan;
-	mso-layout-grid-align:none;
-	punctuation-wrap:simple;
-	text-autospace:none;
-	font-size:10.0pt;
-	font-family:"Times New Roman";
-	mso-fareast-font-family:"Times New Roman";}
-h1
-	{mso-style-next:Normal;
-	margin:0in;
-	margin-bottom:.0001pt;
-	mso-pagination:widow-orphan;
-	page-break-after:avoid;
-	mso-outline-level:1;
-	tab-stops:-4.5pt 13.5pt;
-	mso-layout-grid-align:none;
-	punctuation-wrap:simple;
-	text-autospace:none;
-	font-size:10.0pt;
-	font-family:"Times New Roman";
-	mso-fareast-font-family:"Times New Roman";
-	mso-font-kerning:0pt;
-	font-weight:bold;
-	mso-bidi-font-weight:normal;}
-h3
-	{margin-right:0in;
-	mso-margin-top-alt:auto;
-	mso-margin-bottom-alt:auto;
-	margin-left:0in;
-	mso-pagination:widow-orphan;
-	mso-outline-level:3;
-	font-size:13.5pt;
-	font-family:"Arial Unicode MS";
-	font-weight:bold;}
-p.MsoBodyTextIndent, li.MsoBodyTextIndent, div.MsoBodyTextIndent
-	{margin-right:0in;
-	mso-margin-top-alt:auto;
-	mso-margin-bottom-alt:auto;
-	margin-left:.25in;
-	mso-pagination:widow-orphan;
-	mso-layout-grid-align:none;
-	punctuation-wrap:simple;
-	text-autospace:none;
-	font-size:10.0pt;
-	font-family:"Times New Roman";
-	mso-fareast-font-family:"Times New Roman";}
-p.MsoBodyTextIndent2, li.MsoBodyTextIndent2, div.MsoBodyTextIndent2
-	{margin-right:0in;
-	mso-margin-top-alt:auto;
-	mso-margin-bottom-alt:auto;
-	margin-left:.5in;
-	text-indent:-4.5pt;
-	mso-pagination:widow-orphan;
-	mso-layout-grid-align:none;
-	punctuation-wrap:simple;
-	text-autospace:none;
-	font-size:10.0pt;
-	font-family:"Times New Roman";
-	mso-fareast-font-family:"Times New Roman";}
-a:link, span.MsoHyperlink
-	{color:blue;
-	text-decoration:underline;
-	text-underline:single;}
-a:visited, span.MsoHyperlinkFollowed
-	{color:purple;
-	text-decoration:underline;
-	text-underline:single;}
-p
-	{margin-right:0in;
-	mso-margin-top-alt:auto;
-	mso-margin-bottom-alt:auto;
-	margin-left:0in;
-	mso-pagination:widow-orphan;
-	font-size:12.0pt;
-	font-family:"Arial Unicode MS";}
-pre
-	{margin:0in;
-	margin-bottom:.0001pt;
-	mso-pagination:widow-orphan;
-	tab-stops:45.8pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt;
-	font-size:10.0pt;
-	font-family:"Arial Unicode MS";}
-span.ornotepadcommenttext
-	{mso-style-name:or_notepadcommenttext;}
- /* Page Definitions */
-@page
-	{mso-endnote-position:end-of-section;
-	mso-endnote-numbering-style:arabic;
-	mso-endnote-numbering-start:0;}
-@page Section1
-	{size:8.5in 11.0in;
-	margin:1.0in 1.25in 1.0in 1.25in;
-	mso-header-margin:.5in;
-	mso-footer-margin:.5in;
-	mso-paper-source:0;}
-div.Section1
-	{page:Section1;}
- /* List Definitions */
-@list l0
-	{mso-list-id:38555500;
-	mso-list-template-ids:1249547622;}
-@list l0:level1
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:.5in;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	mso-ansi-font-size:10.0pt;
-	font-family:Symbol;}
-@list l1
-	{mso-list-id:79452612;
-	mso-list-type:hybrid;
-	mso-list-template-ids:-328189422 1449819532 180015560 -1565246122 -2114275314 -1586986662 -760437336 -1977045570 -858489278 931414132;}
-@list l1:level1
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:.5in;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	mso-ansi-font-size:10.0pt;
-	font-family:Symbol;}
-@list l2
-	{mso-list-id:1183861850;
-	mso-list-type:hybrid;
-	mso-list-template-ids:-1669544052 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
-@list l2:level1
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:.5in;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	font-family:Symbol;}
-@list l3
-	{mso-list-id:1506482543;
-	mso-list-type:hybrid;
-	mso-list-template-ids:-17686968 -269305546 -886011344 -7206962 -609730364 -284256638 1586281762 1656813134 -1379219970 1265516292;}
-@list l3:level1
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:.5in;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	mso-ansi-font-size:10.0pt;
-	font-family:Symbol;}
-@list l4
-	{mso-list-id:1677998881;
-	mso-list-type:hybrid;
-	mso-list-template-ids:1470502446 1214544726 -50825918 -277461472 -1854786684 -917470264 -152526064 783323112 741927694 273834790;}
-@list l4:level1
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:.5in;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	mso-ansi-font-size:10.0pt;
-	font-family:Symbol;}
-@list l4:level2
-	{mso-level-number-format:bullet;
-	mso-level-text:\F0B7;
-	mso-level-tab-stop:1.0in;
-	mso-level-number-position:left;
-	text-indent:-.25in;
-	mso-ansi-font-size:10.0pt;
-	font-family:Symbol;}
-ol
-	{margin-bottom:0in;}
-ul
-	{margin-bottom:0in;}
--->
-  </style><o:smarttagtype
- namespaceuri="urn:schemas-microsoft-com:office:smarttags"
- name="address"></o:smarttagtype><o:smarttagtype
- namespaceuri="urn:schemas-microsoft-com:office:smarttags"
- name="PostalCode"></o:smarttagtype><o:smarttagtype
- namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="State"></o:smarttagtype><o:smarttagtype
- namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="Street"></o:smarttagtype><o:smarttagtype
- namespaceuri="urn:schemas-microsoft-com:office:smarttags"
- name="country-region"></o:smarttagtype><o:smarttagtype
- namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="City"></o:smarttagtype><o:smarttagtype
- namespaceuri="urn:schemas-microsoft-com:office:smarttags" name="place"></o:smarttagtype>
-</head>
-<body style="" vlink="purple" lang="EN-US" link="blue">
-<div class="Section1">
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal" style="text-align: center;" align="center"><b
- style=""><span style="font-size: 12pt;">Oracle ODBC
-Driver 11.2</span></b></p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><b style="">DESCRIPTION</b></p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">The Oracle ODBC Driver enables applications to
-connect to
-Oracle database from a Windows client as well as from a Unix client
-that use
-Microsoft Open Database Connectivity<span style="">&nbsp;
-</span>(ODBC) API to read from and write to Oracle databases. </p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">The Oracle ODBC Driver distribution kit consists
-of Dynamic
-Link Libraries/ shared libraries (for Unix platforms), Windows help
-file (for
-installations on Windows platforms only), a copy of the license and
-this
-product description.<span style="">&nbsp; </span>To use an ODBC
-enabled application the following software is required in addition to
-the
-Oracle ODBC Driver:</p>
-<ul type="disc">
-  <li class="MsoNormal" style="">Oracle Client &amp; Net version
-11.2</li>
-  <li class="MsoNormal" style="">Oracle Database Server</li>
-</ul>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">Oracle&nbsp;ODBC Driver complies with ODBC 3.52
-specifications.<br>
-</p>
-<p class="MsoNormal"><br>
-</p>
-<p class="MsoNormal"><b style="">NEW FEATURES<br>
-<br>
-</b></p>
-<p class="MsoNormal"><b style="">ODBC 11.2.0.1.0</b></p>
-<p><span style="font-size: 10pt; font-family: &quot;Times New Roman&quot;;">Features
-of
-the
-Oracle
-ODBC
-Driver
-release 11.2.0.1.0 software for the <span
- title="Monday, May 18, 2009 9:53:46 AM EDT"><span
- class="ornotepadcommenttext">Microsoft
-Windows XP, Microsoft Windows 2003 Server, Microsoft Windows Vista,
-Linux
-X86-32 </span></span>(RHEL AS 4,5)<span
- title="Monday, May 18, 2009 9:53:46 AM EDT"><span
- class="ornotepadcommenttext">,
-Linux X86-64 </span></span>(RHEL AS 4,5) (32/64 bit)<span
- title="Monday, May 18, 2009 9:53:46 AM EDT"><span
- class="ornotepadcommenttext">,
-Sun Solaris SPARC64 </span></span>(9,10) <span
- title="Monday, May 18, 2009 9:53:46 AM EDT"><span
- class="ornotepadcommenttext">(32,64
-bit), IBM AIX 5L </span></span>5.2 <span
- title="Monday, May 18, 2009 9:53:46 AM EDT"><span
- class="ornotepadcommenttext">(32,64
-bit), Linux IA64 (64 bit), Linux on Power (32,64 bit), Sun Solaris X64
-(64
-bit), Hewlett Packard Itanium (32,64 bit) </span></span>operating
-systems are
-described as follows:<br>
-</span></p>
-<ul style="margin-top: 0in;" type="disc">
-  <li class="MsoNormal" style="">Oracle ODBC driver has been enhanced
-to prefetch LONG/ LONG RAW data to improve performance of ODBC
-applications. To do this the maximum size of LONG data (MaxLargeData)
-has to be set in registry on Windows (also need to add the registry key
-“MaxLargeData” in the DSN), and in odbc.ini file on Unix platforms
-manually. This enhancement has improved the performance of Oracle ODBC
-driver up to 10 times, depending on the MaxLargeData size set by the
-user. The default value of MaxLargeData is 0. The maximum value for
-MaxLargeData that can be set by the user is 64KB (65536 bytes). Even if
-the value of MaxLargeData is set to some value greater than 65536, the
-data fetched will be 65536 bytes only. If uses has LONG/ LONG RAW data
-in database which is greater that 65536 bytes, MaxLargeData should be
-set to 0 (the default value), which will result in single row fetch and
-complete LONG data can be fetched. Incase the user has passed the
-buffer less than MaxLargeData size in non-polling mode, the data
-truncation error will occur if LONG data size in database is greater
-than the buffer size. (Enhancement Request 7006879).<span
- style="font-family: Helvetica;"><o:p></o:p></span></li>
-  <li class="MsoNormal" style="">Oracle ODBC Driver is now made to
-support OCIDescribeAny() call (to get metadata) to improve performance
-in case of application making heavy calls to small packaged procedures
-that return REF CURSORS through option called "UseOCIDescribeAny" in
-odbc.ini. To use OCIDescribeAny() on Unix platforms, set
-"UseOCIDescribeAny" to "T" (True) in odbc.ini file and on Windows
-through registry in DSN. (Enhancement Request 7704827).</li>
-</ul>
-<br>
-<p class="MsoNormal"><b style="">ODBC 11.1.0.1.0<o:p></o:p></b></p>
-<ul type="disc">
-  <li class="MsoNormal" style="">Added support for Disable RULE Hint.
-Oracle ODBC Driver now allows user to specify the option to select
-whether to use RULE Hint in catalog API’s. The change has been done to
-increase the performance of ODBC driver for catalog API’s. The default
-value for the option is TRUE which means that RULE Hint will not be
-used in catalog API’s by default. (Bug4150034). </li>
-  <li class="MsoNormal" style="">Added support for Bind Number As
-Float. By introducing Column Binding for NUMBER Column as FLOAT when
-column contains float data speeds up the query execution that uses bind
-variables as FLOAT. (Bug4608183). </li>
-  <li class="MsoNormal" style="">Added support for OCI statement
-caching feature that provides and manages a cache of statements for
-each session. By implementing the support for OCI Statement Caching
-option, Oracle ODBC Driver will see the increase in performance where
-user have to parse the same statement multiple times in the same
-connection. The default value for the statement cache flag is FALSE.<span
- style="font-size: 12pt; font-family: &quot;Arial Unicode MS&quot;;"> <o:p></o:p></span></li>
-  <li class="MsoNormal" style=""><span style="">Changed the behavior of
-Result-set cache by saving the un-necessary memory calls to increase
-the ODBC Driver Performance.<span style="font-weight: bold;"></span></span></li>
-</ul>
-<span style=""><span style="font-weight: bold;"><br>
-</span></span>
-<p class="MsoNormal" style=""><b>ODBC
-10.2.0.1.0</b><span
- style="font-size: 12pt; font-family: &quot;Arial Unicode MS&quot;;"> <o:p></o:p></span></p>
-<ul type="disc">
-  <li class="MsoNormal" style="">Added support for named parameter,
-binding parameters by name. Oracle ODBC Driver now allows application
-to specify the parameters to a stored procedure by name, in the
-procedure call. Named parameters are only to be used in calls to stored
-procedures, and not to be used in other SQL statements. (Bug3617324) <o:p></o:p></li>
-  <u1:p></u1:p>
-  <li class="MsoNormal" style="">Changed the behavior of
-describing
-metadata for stored procedures that exist in some package. The change
-has been done to increase the performance of ODBC driver for stored
-procedure calls. Now if the stored procedure is in some package then
-the metadata will be described using PL/SQL procedure. (Bug4030664)<b
- style="">&nbsp;<o:p></o:p></b></li>
-  <li class="MsoNormal" style="">The support for Oracle ODBC Driver for
-Linux and Solaris platforms is introduced in 10.2.0.1 version. From
-release 10.2.0.4 ODBC Driver was made available for AIX platform as
-well.</li>
-</ul>
-<br>
-<h1>ODBC 10.1.0.2.0</h1>
-<br>
-<ul style="margin-top: 0in;" type="disc">
-  <li class="MsoNormal" style="">Added support for NCHAR columns in
-INSERT/UPDATE statements with parameter markers. (Bug 2827132)<span
- style="">&nbsp; </span>Previously the driver did not notice that the
-column was of NCHAR type and failed to set the proper attribute when
-binding at the OCI level.<span style="">&nbsp; </span>As a side effect
-the SQLDescribeParam call now returns useful information for parameters
-in INSERT/UPDATE statements, though not in other statement types. </li>
-  <li class="MsoNormal" style="">Added support for LOBs larger then 4gb.<span
- style="">&nbsp; </span>Requires the Oracle Client and Database to
-both be version Oracle 10g or higher. </li>
-  <li class="MsoNormal" style="">Added support for new BINARY_FLOAT and
-BINARY_DOUBLE datatypes in 10g and later servers. </li>
-  <li class="MsoNormal" style="">Added support for MONTHNAME and
-DAYNAME functions in SQL statements.</li>
-</ul>
-<p class="MsoNormal" style="margin-left: 0.25in;"><b style="">&nbsp;<o:p></o:p></b></p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><b style="">TESTING MATRIX</b></p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">The following table summarizes the testing
-configurations on
-Windows XP that the ODBC driver was certified with.<span style="">&nbsp;
-</span><!--[if !supportEmptyParas]--></p>
-<p class="MsoNormal">The table is not meant to be a complete list of
-all supported
-environments.<br>
-<br>
-</p>
-<p class="MsoNormal"><b><span style="">&nbsp;</span>Driver<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Database<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Operating<span style="">&nbsp; </span><o:p></o:p></b></p>
-<p class="MsoNormal"><b>Version<span style=""> </span><span style="">&nbsp;
-</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>Version<span
- style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Systems<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>MDAC<o:p></o:p></b></p>
-<p class="MsoNormal">11.2.0.3<span style="">
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>As
-Supported<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Windows XP<span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>2.8</p>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>by OCI.</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">For testing matrix for Unix platforms, please
-refer to
-release notes on Oracle ODBC Driver for Unix platforms.</p>
-<p class="MsoNormal"><b style="">&nbsp;<o:p></o:p></b></p>
-<p class="MsoNormal"><b style="">FUNCTIONALITY</b></p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">The Oracle ODBC Driver complies with Version 3.52
-of the
-Microsoft ODBC specification.</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><b style="">SOFTWARE SUPPORT<o:p></o:p></b></p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">If you would like to receive Oracle Support for
-your Oracle
-ODBC Driver, please call (650) 506-5578 in the <st1:country-region><st1:place>US</st1:place>,
-or
-contact
-your
-local
-Oracle
-Sales office. Please note that Oracle will
-not
-provide support for the Oracle ODBC Driver unless a support contract is
-in
-place.</st1:country-region></p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><b style="">HARDWARE REQUIRED<o:p></o:p></b></p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">The Oracle ODBC Driver requires a system
-configuration
-supported by Windows XP and on few Unix platforms as documented in
-release
-notes.</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><b style="">SOFTWARE REQUIRED<o:p></o:p></b></p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">Microsoft Windows XP and for Unix platforms refer
-to release
-notes on Oracle ODBC Driver release for Unix platforms.</p>
-<p class="MsoNormal">Oracle Net Client 11.2</p>
-<p class="MsoNormal">Oracle Universal Installer shipping with Oracle
-11.2</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><b style="">SERVER SOFTWARE
-REQUIREMENTS<o:p></o:p></b></p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">This section lists the server software required to
-support
-ODBC enabled applications through the Oracle ODBC Driver.</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">Oracle Server 10.2 or higher</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><b style="">MORE INFORMATION<o:p></o:p></b></p>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
-<p class="MsoNormal"><b style="">1. Post-Installation</b><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">Use the Microsoft(R) ODBC Administrator to
-configure your
-Oracle ODBC Driver data sources on Windows. Refer to the Oracle ODBC
-driver
-help file section entitled Configuring the Data Source. For Unix Client
-refer
-to point-4 below.</p>
-<p class="MsoNormal">&nbsp;&nbsp;</p>
-<p class="MsoNormal"><b style="">2. Data Conversions</b></p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">The Oracle ODBC Driver follows the Microsoft(R)
-ODBC 3.00
-Software Development Kit (SDK) guidelines for manipulating and
-displaying real
-and double data types. Precision (the maximum number of digits used) of
-SQL_DOUBLE and SQL_FLOAT is 15.</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">If double values are stored in an Oracle database
-precision
-for these data types can be much greater than what ODBC currently
-supports. The
-end result will be the loss of precision. For Example:</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>A float
-data type defined in Oracle with the default precision contains a
-number such
-as:</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>123.9991029382123</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>When
-converted on the Windows Platform the number will drop precision to</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>123.999102938212</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">This loss of precision may have different behavior
-for different
-applications. For Microsoft Access(R), the user is not allowed to
-update the
-data. Microsoft Access(R) thinks the data has changed, because Oracle
-has the
-value 123.9991029382123 and Microsoft Access(R) now has the original
-but
-truncated number 123.99910293821. Microsoft Access(R) cannot update the
-row
-using the 123.99910293821 truncated number as a selection criteria
-since that
-row does not exist in the Oracle database.<span style="">&nbsp;
-</span>Only the original row with 123.9991029382123 exists in the
-Oracle
-database.</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">In Microsoft Query(R) the display will be
-incorrect. Lets
-take for example the following double precision number to display:</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>-1.123400000000000E-001</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>with
-Microsoft Query(R) the number is displayed as</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>-1.123400000000000E-00</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">Microsoft Query(R) makes a call to
-SQLColAttributes
-returning the display size of 22. The format defined in the ODBC SDK
-for
-display of a double precision data is the following:</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Total
-22 Length</p>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>(a
-sign,15 digits,a decimal point,the letter E,a sign and 3 digits)</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">Our example contains a total string length of 23
-with 16
-digits instead of the 15 digits for precision. This is why the data is
-displayed wrong. </p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">In general to avoid precision problems using ODBC,
-ensure
-that data stored in the Oracle database for a double data type conform
-to the
-specifications described in the Microsoft ODBC Programmer's Reference
-and SDK
-Guide. </p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><b style="">3. Known Software
-Problems for Oracle ODBC Driver</b></p>
-<ul type="disc">
-  <ul type="disc">
-    <li class="MsoNormal" style="margin-bottom: 12pt;">The
-SQLSetStmtOption SQL_QUERY_TIMEOUT does not work if the database server
-is running on Windows NT. As &nbsp;a workaround,Setting
-BREAK_POLL_SKIP=1 in server's sqlnet.ora solves the problem. By
-default, this is set to 100, and the database would not check for
-timeout set by the ODBC application.</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">SQLCancel does
-not work if you are canceling a statement that is executing on Windows
-NT database server.</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">SQLBindParameter
-when used to bind a buffer as SQL_PARAM_INPUT_OUTPUT and having a
-pl/sql procedure with IN OUT parameter and if the parameter is not
-changed in the procedure,then driver will not return SQL_NULL_DATA in
-StrLen_or_IndPtr. </li>
-  </ul>
-</ul>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal"><b style="">4.<span style="">&nbsp; </span>ODBC
-Driver For Unix platforms</b></p>
-<p class="MsoNormal"><span style="">&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
-<p class="MsoNormal">Please refer to release notes of Oracle ODBC
-Driver for Unix
-platforms.<br>
-</p>
-<p class="MsoNormal"><br>
-<o:p></o:p></p>
-<p class="MsoNormal"><b style="">&nbsp;5.<span style="">&nbsp; </span>Software
-Problems
-Fixed</b><br>
-<br>
-</p>
-<p class="MsoNormal">Note: Most of the fixes are generic in nature
-though may be discovered
-on a particular platform. There could be small number of platform
-specific
-fixes as well.</p>
-<span style="font-family: &quot;times new roman&quot;;"><br>
-</span>
-<h1 style=""><span style="">Version
-11.2.0.3.0 <br>
-</span></h1>
-<br>
-<ul style="margin-left: 40px;" type="disc">
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to fail with access vilation in SQLFetchScroll() API.(Bug#9578533)</li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC function
-SQLSetPos() used to over right 2 bytes after row status buffer when
-called with SQL_UPDATE paramter.(Bug#9764806)</li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to hang/crash under multi threaded environment and also memory leak
-during mutliple connect/disconnect.(Bug#9850419)</li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to return ORA-1461 or access violation when used with SQL_RESET_PARAMS
-in SQLFreeStmt() API.(Bug#9903704)</li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to give ORA-1410 followed by access violation with SELECT statement
-where table is created and values are inserted with DB character set as
-AL32UTF8.(Bug#10132342)</li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC data Source
-Administrator never used to show the fully qualified service name in
-the drop down box.(Bug#10236704)</li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to return ORA-1410 after applying 11.2.0.1 Patch 7 against UTF8 Oracle
-database.(Bug#10422748)</li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to crash when row status array is being used.(Bug#11933135)</li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to result garbeld data if that contains multibyte minus
-character.(bug#12704978)<br>
-  </li>
-</ul>
-<br>
-<span style="font-family: &quot;times new roman&quot;;"><br>
-</span>
-<h1 style=""><span style="">Version
-11.2.0.2.0 <br>
-</span></h1>
-<br>
-<ul style="margin-left: 40px;" type="disc">
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to abort when SQL Server EXEC statement containing procedure without
-parameters is passed and EXECSyntax=T(Bug#8393140) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to return wrong suffix and prefix lengths on 64-bit
-environment(Bug#8429289) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to fail during SQLConnect on AIX environment when when DM version is
-set to&nbsp;&nbsp;SQL_OV_ODBC2(Bug#8639577) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC application
-used to fail on Unix 64-bit environment when SQLFetchScroll() with bind
-type SQL_C_SLONG(Bug#8735155) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to truncate the data when there is multi-byte data in a selected row
-with combination of NLS_LENGTH_SEMANTICS=CHAR and AL32UTF8
-char set(Bug#8771556) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to crash on Solaris sparc64 while executing the statement(Bug#8775499) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to crash on HPUXIA64 while fetching float/double data(Bug#8974909) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to hang during transfer of MS access table data to oracle
-table(Bug#8984021) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to fail on Windows 64-bit while adding data source using&nbsp;
-SQLConfigDataSource() API(Bug#9023338) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to crash on Solaris while dealing with float/double(Bug#9058381) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-return incorrect data on big endian environment when application binds
-date field to SQL_C_WCHAR(Bug#9070694) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to crash on Unix 64-bit environment when SQLGetConnectAttr() is used
-with pointer to unsigned int(Bug#9105601) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to map incorrect size for SQL_C_ULONG, SQL_C_SLONG and SQL_C_LON types
-on Unix 64-bit environment(Bug# 9463231) </li>
-  <li class="MsoNormal" style="margin-bottom: 12pt;">Unicode ODBC
-application used to fail while SQL execution(Bug# 9743383) </li>
-  <li class="MsoNormal">ODBC Driver Configuration of "ODBC Data Source
-Administrator" used to show garbage values in the drop down list for
-"TNS Service Name"&nbsp;&nbsp;when TNS_ADMIN value is set in registry
-and not as environment variable(Bug# 8796983)</li>
-</ul>
-<ul style="margin-left: 40px;" type="disc">
-  <li class="MsoNormal">ODBC Driver used to return no-data-found in
-case of SQLROWSET_SIZE is more than remaining rows application returns
-no-data-found when SQLROWSET_SIZE is set more than the remaining rows
-after first fetch(Bug# 9264668)</li>
-</ul>
-<br>
-<br>
-<h1 style=""><span style="">Version
-11.2.0.1.0<o:p></o:p></span></h1>
-<span style="font-family: &quot;times new roman&quot;;"><br>
-</span>
-<ul type="disc">
-  <ul type="disc">
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to return wrong length for SQLBindCol on Solaris (port specific) (Bug
-7660125)</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">Memory leak was
-reported in ODBC driver while retrurning result set from stored
-procedure. (Bug 7586197)</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC was failing
-to update the LONG RAW when size is more than 65536 (Bug 7585970)</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC application
-used to fail with NULL password error when MTS is enabled (Bug 7509964)</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to return access violation on executing stored procedure. (Bug 7458976)</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC application
-used to hang when more connections are created. (Bug 7388606)</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC application
-used to crash when SQLSetParm() is called with string which is non NULL
-terminated. (Bug 7011807)</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to report ORA-24817 on querying bulk operation (Bug 6908070)</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to return wrong length and data for SQLGetData() when using NLS
-character in literal and with NLS settings as NLS_LENGTH_SEMANTICS=
-CHAR , NLS_CHARACTERSET = AL32UTF8. (Bug 6801797)</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to crash on 64-bit environments while fetching data. (Bug 6801211)</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to show wrong types when using SQLDescribeParam(), SQLDescribeCol(),
-SQLColumns(), SQLGetTypeInfo(). (Bug 6598695) </li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to crash in SQLGetStmtAttr(). (Bug 6416638) </li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to report SIGBUS on Solaris SPARC as memory for cache blocks is not
-aligned. (Bug 6411945)</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to return [ORACLE][ODBC]Memory Allocation Error, while describing meta
-data for a procedure. (Bug 6085754) </li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to report error on executing procedure after execution of insert
-statement. (Bug 5961436) </li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to report ORA-24374, whenever a SQL Statement is preceded by any valid
-tokens which does not give the SQL Statement type. (Bug 5383456) </li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to return same error message twice at SQLExecute(). (Bug 5222165) </li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to return ORA-24374 when executing query including line comment. (Bug
-4743995)</li>
-  </ul>
-</ul>
-<br>
-<h1 style=""><span style="">Version
-11.1.0.1.0</span></h1>
-<br>
-<ul type="disc">
-  <ul type="disc">
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to fail in updating output parameter of stored procedure incase it
-contains large CLOB parameter as input parameter. (Bug5365475).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to do improper round off for Double data if connecting to 10GB
-database. (Bug5389003).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to fail in updating output parameter of stored procedure incase it
-contains large CLOB parameter as input parameter.(Bug5365475).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to truncate CLOB data in case of UNICODE characterset of client.
-(Bug5220440).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to return old data on requering the data for Read Only connection.
-(Bug5202103).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to report ora-1008, when MFC application requeries the database.
-(Bug5147229).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to return wrong value on Fetching a NUMBER Value Which is converted to
-SQL_C_CHAR. (Bug5128512).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to return wrong information for few column types. (Bug5015342).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to report ORA-12704 on second invocation of SQLExecute() for NCLOB
-columns. (Bug4965677).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to report crash on exit of ADO/Excel application. (Bug4893583).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to return 0 as the Datatype on Calling SQLBindCol() after
-SQLColumns().This problem appears only on solaris platform but the fix
-is generic. (Bug4880062).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC
-Administrator used to show ODBC entries even after uninstalling the
-ODBC. (Bug4761792).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to truncate the data retrieved with SQLFetchScroll() call. (Bug4735799).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to result in application crash<span style="">&nbsp; </span>while
-executing stored procedure having large number of parameters.
-(Bug4727495).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">DM from
-UNIXODBC.ORG reports error: Driver does not support SQLSETSTMTATTR().
-This is a port specific (Linux/Solaris) bug.<span style="">&nbsp; </span>(Bug4710548).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to report undefined symbol 'SLEEP' when failover happens. (Bug4698310).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to report crash on inserting NULL data using bind offsets. (Bug4694220).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to set the value corresponding to attribute
-SQL_ATTR_PARAMS_PROCESSED_PTR improperly in case of stored procedure
-execution with array binds. (Bug4690201).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to report crash when returning an array of Varchars from an stored
-procedure. (Bug4690147).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver use
-to give in complete result set incase the stored procedure contains REF
-CURSOR arguments. (Bug4624776).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to report error on executing stored procedure containing<span style="">&nbsp;
-
-
-      </span>REF CURSOR parameters. (Bug4622561).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to take more time for fetching data from a NUMBER column containing
-FLOAT data. (Bug4608183).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to return Duplicate results for SQLProcedures() API. (Bug4565416).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to report memory leak for stored procedure containing REF cursors.
-(Bug4551675).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to return ora-1406 when selecting calculated number with large
-precision from view. (Bug4546618).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to report crash for executing queries in multithreaded application.
-(Bug4519067).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC
-administrator used to invoke English ODBC help in Japanese environment.
-(Bug4506552).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC driver used
-to report error "Input string too long, limit 4096", when the long
-string contains CRLF code in the starting (Bug4371966).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC
-administrator used to get failed while opening help file under Instant
-Client environment. (Bug4309867).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC Driver used
-to return wrong data for stored procedures having NCLOB as OUT Param.
-(Bug4235212).</li>
-    <li class="MsoNormal" style="margin-bottom: 12pt;">ODBC catalogue
-functions used to take more time to complete. (Bug4150034).</li>
-  </ul>
-</ul>
-<span style="font-family: &quot;times new roman&quot;;"><br>
-<br>
-</span>
-<p class="MsoNormal">****************************************************************************</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">For More Information</p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">Contact your Oracle Sales Representative, your
-Oracle Sales
-Office, or call 1-800-ORACLE1.<span style="">&nbsp; </span>Outside
-of the United States please call 650-506-5701. </p>
-<p class="MsoNormal">&nbsp;</p>
-<p class="MsoNormal">Copyright Oracle Corporation 2009. All Rights
-Reserved.<span style="">&nbsp; </span>Printed in the <st1:country-region><st1:place>U.S.A.</st1:place>
-</st1:country-region><span style="">&nbsp;&nbsp;</span>This document is
-provided for informational purposes only.<span style="">&nbsp;
-</span>No contract is implied or allowed.<span style="">&nbsp;
-</span>Oracle is a registered trademark.<span style="">&nbsp;
-</span>Oracle9 and Oracle Net9 are trademarks of Oracle.<span style="">&nbsp;
-</span>Microsoft, Microsoft Access, Microsoft
-Query, MS, Windows XP, Windows NT, Windows 2000 and Windows 98 are
-trademarks
-of Microsoft Corporation. <span style="">&nbsp;</span>PowerBuilder
-is a registered trademark of Sybase Inc. All other company and product
-names
-mentioned are used for identification purposes only, and may be
-trademarks of
-their respective owners.<span style="">&nbsp; </span>Oracle
-Corporation World Headquarters is located at <st1:address><st1:street>500
-Oracle
-Parkway</st1:street>, <st1:city>Redwood Shores</st1:city>, <st1:state>CA</st1:state>
-<span style="">&nbsp;</span><st1:postalcode>94065</st1:postalcode> <st1:country-region>U.S.A.</st1:country-region></st1:address></p>
-<p class="MsoNormal">&nbsp;</p>
-</div>
-</body>
-</html>

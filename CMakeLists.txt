@@ -25,6 +25,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 # MSSQL CONFIGURATIONS -------------------------------------------------------------------------------------------------
 set(ODBC_LIBS "")
+set(ODBC_HEADERS "")
 
 
 # OTHER LIBS  ----------------------------------------------------------------------------------------------------------
@@ -70,11 +71,12 @@ endif (UNIX)
 
 if (APPLE)
 
-    # MSSQL
-    set(ODBC_LIBS ${PROJECT_DIR}/include/macos/unixodbc/2.3.11/lib/libodbc.dylib
-            ${PROJECT_DIR}/include/macos/unixodbc/2.3.11/lib/libodbccr.dylib
-            ${PROJECT_DIR}/include/macos/unixodbc/2.3.11/lib/libodbcinst.dylib
-            )
+    #Includes/Headers
+    set(ODBC_HEADERS ${PROJECT_DIR}/include/connectors/macos/msodbcsql18/18.3.2.1/include/msodbcsql18/msodbcsql.h)
+
+    # Libs
+    set(ODBC_LIBS ${PROJECT_DIR}/lib/macos/msodbcsql18/18.3.2.1/lib/libmsodbcsql.18.dylib)
+
 endif (APPLE)
 
 #-----------------------------------------------------------------------------------------------------------------------
