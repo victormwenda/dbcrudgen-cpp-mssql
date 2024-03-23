@@ -52,7 +52,7 @@ endif (WIN32)
 #-----------------------------------------------------------------------------------------------------------------------
 
 
-if (UNIX)
+if (LINUX)
 
     set(OTHER_LIBS_PATH ${PROJECT_DIR}/lib/linux/others/)
 
@@ -63,7 +63,7 @@ if (UNIX)
     #set(ODBC_LIBS ${ODBC_LIBS_DIR}/libmsodbcsql-18.1.so.2.1)
     set(ODBC_LIBS odbc)
 
-endif (UNIX)
+endif (LINUX)
 
 #-----------------------------------------------------------------------------------------------------------------------
 # MACOS BUILD ENVIRONMENT
@@ -72,7 +72,10 @@ endif (UNIX)
 if (APPLE)
 
     #Includes/Headers
-    set(ODBC_HEADERS ${PROJECT_DIR}/include/connectors/macos/msodbcsql18/18.3.2.1/include/msodbcsql18/msodbcsql.h)
+    set(ODBC_HEADERS
+            ${PROJECT_DIR}/include/connectors/macos/msodbcsql18/18.3.2.1/include/msodbcsql18/msodbcsql.h
+            ${PROJECT_DIR}/include/connectors/macos/unixodbc/2.3.11/include/
+    )
 
     # Libs
     set(ODBC_LIBS ${PROJECT_DIR}/lib/macos/msodbcsql18/18.3.2.1/lib/libmsodbcsql.18.dylib)
@@ -172,7 +175,7 @@ set(SOURCE_FILES
 
         src/orm/codegen/ProjectCodeGen.h
 
-       src/orm/codegen/cpp/CppProjectCodeGen.h
+        src/orm/codegen/cpp/CppProjectCodeGen.h
 
         src/orm/creators/ProjectCreator.h
 
@@ -186,8 +189,6 @@ set(SOURCE_FILES
         src/orm/parsers/cpp/CppMYSQLSCRUDParser.h
 
 
-
-
         src/orm/projects/CppProjectModel.h
 
         src/orm/projects/ProjectModel.h
@@ -196,7 +197,6 @@ set(SOURCE_FILES
         src/orm/templates/SourceCodeTemplate.h
         src/orm/templates/StringSourceCodeTemplate.h
         src/orm/templates/TemplateFiles.h
-
 
 
         src/orm/templates/cpp/CppClassTableModelTemplate.h

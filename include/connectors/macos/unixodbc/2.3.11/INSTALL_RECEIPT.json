@@ -1,0 +1,59 @@
+{
+  "homebrew_version": "3.4.10-38-g7e1f348",
+  "used_options": [
+
+  ],
+  "unused_options": [
+
+  ],
+  "built_as_bottle": true,
+  "poured_from_bottle": true,
+  "loaded_from_api": null,
+  "installed_as_dependency": true,
+  "installed_on_request": false,
+  "changed_files": [
+    "include/unixODBC/config.h",
+    "include/unixODBC/unixodbc_conf.h",
+    "lib/pkgconfig/odbc.pc",
+    "lib/pkgconfig/odbccr.pc",
+    "lib/pkgconfig/odbcinst.pc"
+  ],
+  "time": 1663669010,
+  "source_modified_time": 1651683796,
+  "compiler": "clang",
+  "aliases": [
+
+  ],
+  "runtime_dependencies": [
+    {
+      "full_name": "m4",
+      "version": "1.4.19",
+      "declared_directly": false
+    },
+    {
+      "full_name": "libtool",
+      "version": "2.4.7",
+      "declared_directly": true
+    }
+  ],
+  "source": {
+    "spec": "stable",
+    "versions": {
+      "stable": "2.3.11",
+      "head": null,
+      "version_scheme": 0
+    },
+    "path": "/opt/homebrew/Library/Taps/homebrew/homebrew-core/Formula/unixodbc.rb",
+    "tap_git_head": "c1b0e95c0069cb2a49fac440301d0d7c8125c557",
+    "tap": "homebrew/core"
+  },
+  "arch": "arm64",
+  "built_on": {
+    "os": "Macintosh",
+    "os_version": "macOS 12",
+    "cpu_family": "arm_firestorm_icestorm",
+    "xcode": "13.3",
+    "clt": "13.3.0.0.1.1645755326",
+    "preferred_perl": "5.30"
+  }
+}

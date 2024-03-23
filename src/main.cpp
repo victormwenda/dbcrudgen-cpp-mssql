@@ -11,14 +11,6 @@
 #include "databases/mssql/decomposer/MSSQLDatabaseDecomposer.h"
 
 
-/**
- * Create a Generic database from a MYSQL Database Model
- * @param databaseModel
- * @return
- */
-dbcrudgen::db::generic::Database getGenericDatabase(dbcrudgen::db::mysql::MYSQLDatabaseModel &databaseModel);
-
-
 void mssqlDevelopment();
 
 int main(int argc, char **argv) {
@@ -69,13 +61,4 @@ void mssqlDevelopment() {
                   << "static const int INDEX = " << i+1 << ";"
                   << "};"<< std::endl;
     }*/
-}
-
-/**
- * Create generic database model
- * @param databaseModel
- * @return
- */
-dbcrudgen::db::generic::Database getGenericDatabase(dbcrudgen::db::mysql::MYSQLDatabaseModel &databaseModel) {
-    return dbcrudgen::db::mysql::MYSQLDatabaseFlattener::flatten(databaseModel);
 }
