@@ -123,7 +123,7 @@ namespace dbcrudgen {
                 bool createConnection() {
                     std::string dbConnStr = getConnParams().getConnStr();
                     SQLCHAR *connStr = (SQLCHAR *) dbConnStr.c_str();
-                    SQLRETURN connResult = SQLDriverConnectW(hDbc, nullptr, connStr, SQL_NTS, nullptr,
+                    SQLRETURN connResult = SQLDriverConnect(hDbc, nullptr, connStr, SQL_NTS, nullptr,
                                                             0, nullptr, SQL_DRIVER_COMPLETE);
                     switch (connResult) {
                         case SQL_SUCCESS:
