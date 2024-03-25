@@ -36,4 +36,4 @@
 /cmake-build-release
 
 #Ignore idea files
-/.idea
+/.idea.DS_Store

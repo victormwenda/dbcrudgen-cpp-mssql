@@ -122,8 +122,8 @@ namespace dbcrudgen {
 
                 bool createConnection() {
                     std::string dbConnStr = getConnParams().getConnStr();
-                    SQLCHAR *connStr = (SQLCHAR *) dbConnStr.c_str();
-                    SQLRETURN connResult = SQLDriverConnect(hDbc, nullptr, connStr, SQL_NTS, nullptr,
+                    SQLWCHAR *connStr = (SQLWCHAR *) dbConnStr.c_str();
+                    SQLRETURN connResult = SQLDriverConnectW(hDbc, nullptr, connStr, SQL_NTS, nullptr,
                                                             0, nullptr, SQL_DRIVER_COMPLETE);
                     switch (connResult) {
                         case SQL_SUCCESS:
@@ -177,11 +177,11 @@ namespace dbcrudgen {
                  * @param recNumber
                  */
                 void printErrorDiagInfo(SQLSMALLINT handleType, SQLHANDLE sqlHandle, SQLSMALLINT recNumber = 1) {
-                    SQLCHAR sqlState[10];
+                    SQLWCHAR sqlState[10];
                     SQLINTEGER nativeError;
-                    SQLCHAR messageTxt[256];
+                    SQLWCHAR messageTxt[256];
                     SQLSMALLINT length;
-                    SQLGetDiagRec(handleType, sqlHandle, recNumber, sqlState, &nativeError, messageTxt,
+                    SQLGetDiagRecW(handleType, sqlHandle, recNumber, sqlState, &nativeError, messageTxt,
                                   sizeof(messageTxt), &length);
                     std::cerr << "SQL state: " << sqlState << " Native error: " << nativeError << " Message text: "
                               << messageTxt << std::endl;

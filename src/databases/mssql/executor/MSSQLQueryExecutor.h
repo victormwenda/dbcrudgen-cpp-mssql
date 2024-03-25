@@ -70,9 +70,9 @@ namespace dbcrudgen {
                  * @return
                  */
                 bool prepareStatement(const std::string &statement) {
-                    auto *query = (SQLCHAR *) statement.c_str();
+                    auto *query = (SQLWCHAR *) statement.c_str();
 
-                    SQLRETURN prepareStmt = SQLPrepare(hSmt, query, SQL_NTS);
+                    SQLRETURN prepareStmt = SQLPrepareW(hSmt, query, SQL_NTS);
 
                     switch (prepareStmt) {
                         case SQL_SUCCESS:
@@ -98,11 +98,11 @@ namespace dbcrudgen {
                  * @param recNumber
                  */
                 static void printErrorDiagInfo(SQLSMALLINT handleType, SQLHANDLE sqlHandle, SQLSMALLINT recNumber = 1) {
-                    SQLCHAR sqlState[10];
+                    SQLWCHAR sqlState[10];
                     SQLINTEGER nativeError;
-                    SQLCHAR messageTxt[256];
+                    SQLWCHAR messageTxt[256];
                     SQLSMALLINT length;
-                    SQLGetDiagRec(handleType, sqlHandle, recNumber, sqlState, &nativeError, messageTxt,
+                    SQLGetDiagRecW(handleType, sqlHandle, recNumber, sqlState, &nativeError, messageTxt,
                                   sizeof(messageTxt), &length);
                     std::cerr << "SQL state: " << sqlState << " Native error: " << nativeError << " Message text: "
                               << messageTxt << std::endl;
@@ -120,7 +120,7 @@ namespace dbcrudgen {
                     bool prepStmt = prepareStatement(sqlQuery);
 
                     if (prepStmt) {
-                        SQLRETURN execReturnInt = SQLExecDirect(hSmt, (SQLCHAR *) sqlQuery.c_str(), SQL_NTS);
+                        SQLRETURN execReturnInt = SQLExecDirectW(hSmt, (SQLWCHAR *) sqlQuery.c_str(), SQL_NTS);
 
                         switch (execReturnInt) {
                             case SQL_SUCCESS:

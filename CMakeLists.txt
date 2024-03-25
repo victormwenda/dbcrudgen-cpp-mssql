@@ -73,12 +73,12 @@ if (APPLE)
 
     #Includes/Headers
     set(ODBC_HEADERS
-           # ${PROJECT_DIR}/include/connectors/macos/msodbcsql18/18.3.2.1/include/msodbcsql18/msodbcsql.h
-            ${PROJECT_DIR}/include/connectors/macos/unixODBC-2.2.12/include
+            ${PROJECT_DIR}/include/connectors/macos/unixODBC-2.3.12/include
+            ${PROJECT_DIR}/include/connectors/macos/unixODBC-2.3.12/
     )
 
     # Libs
-    set(ODBC_LIBS ${PROJECT_DIR}/lib/macos/msodbcsql/13.1.9.2/lib/libmsodbcsql.13.dylib)
+    set(ODBC_LIBS ${PROJECT_DIR}/lib/macos/msodbcsql18/18.3.2.1/lib/libmsodbcsql.18.dylib)
 
 endif (APPLE)
 
