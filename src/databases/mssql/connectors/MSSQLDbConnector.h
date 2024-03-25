@@ -122,7 +122,7 @@ namespace dbcrudgen {
 
                 bool createConnection() {
                     std::string dbConnStr = getConnParams().getConnStr();
-                    SQLWCHAR *connStr = (SQLWCHAR *) dbConnStr.c_str();
+                    SQLWCHAR *connStr = (SQLWCHAR *) u"DRIVER={ODBC Driver 18 for SQL Server};Server=127.0.0.1,1433;DATABASE=dbcrudgen;UID=SA;PWD=Root@3358;Authentication=SqlPassword;Encrypt=No;Trusted_Connection=No;";
                     SQLRETURN connResult = SQLDriverConnectW(hDbc, nullptr, connStr, SQL_NTS, nullptr,
                                                             0, nullptr, SQL_DRIVER_COMPLETE);
                     switch (connResult) {
@@ -183,8 +183,8 @@ namespace dbcrudgen {
                     SQLSMALLINT length;
                     SQLGetDiagRecW(handleType, sqlHandle, recNumber, sqlState, &nativeError, messageTxt,
                                   sizeof(messageTxt), &length);
-                    std::cerr << "SQL state: " << sqlState << " Native error: " << nativeError << " Message text: "
-                              << messageTxt << std::endl;
+                    std::cerr << "SQL state: " << *sqlState << " Native error: " << nativeError << " Message text: "
+                              << *messageTxt << std::endl;
                 }
 
                 void disconnect() {

@@ -797,7 +797,7 @@ namespace dbcrudgen {
 
 
                     std::vector<MSSQLResultSet> resultSet{};
-                    std::string query{MSSQLQueries::GET_SYS_DATABASES};
+                    SQLWCHAR *query = (SQLWCHAR *) u"SELECT * FROM SYS.DATABASES;";
                     executor.execQuery(query, colBindings, resultSet);
 
                     std::string name;

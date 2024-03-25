@@ -30,8 +30,27 @@ void mssqlDevelopment() {
     dbcrudgen::db::mssql::MSSQLDbConnParams connParams{host, port, database, user, password};
     dbcrudgen::db::mssql::MSSQLDbConnector connector{connParams};
     dbcrudgen::db::mssql::MSSQLDatabaseDecomposer decomposer{connector};
+
+
+    // Get Databases
+    const std::vector<dbcrudgen::db::mssql::SysDatabases> &sysDatabases = decomposer.getSysDatabases();
+    std::cout << "Database Id\t"
+              << "Database Name\t"
+              << "Created On\t"
+              << "Collation Name\t"
+              << std::endl;
+
+    for (auto &database: sysDatabases) {
+        std::cout << database.getDatabaseId() << "\t"
+                  << database.getName() << "\t"
+                  << database.getCreateDate() << "\t"
+                  << database.getCollationName() << "\t"
+                  << std::endl;
+    }
+
+
     std::string tableName = "all_columns";
-    std::vector <dbcrudgen::db::mssql::SpTables> tables = decomposer.getTables();
+    std::vector<dbcrudgen::db::mssql::SpTables> tables = decomposer.getTables();
 
     std::cout << "TableQualifier\t"
               << "TableOwner\t"

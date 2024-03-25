@@ -91,6 +91,27 @@ namespace dbcrudgen {
 
                 }
 
+                bool prepareStatement(SQLWCHAR *query) {
+
+                    SQLRETURN prepareStmt = SQLPrepareW(hSmt, query, SQL_NTS);
+
+                    switch (prepareStmt) {
+                        case SQL_SUCCESS:
+                            return true;
+                        case SQL_SUCCESS_WITH_INFO:
+                            return true;
+                        case SQL_INVALID_HANDLE:
+                            return false;
+                        case SQL_ERROR:
+                            printErrorDiagInfo(SQL_HANDLE_STMT, hSmt, 1);
+                            return false;
+                        default:
+                            std::cerr << "FAILED :: Prepare statement :: " << prepareStmt << std::endl;
+                            return false;
+                    }
+
+                }
+
                 /**
                  * Print SQL Error
                  * @param handleType
@@ -103,9 +124,9 @@ namespace dbcrudgen {
                     SQLWCHAR messageTxt[256];
                     SQLSMALLINT length;
                     SQLGetDiagRecW(handleType, sqlHandle, recNumber, sqlState, &nativeError, messageTxt,
-                                  sizeof(messageTxt), &length);
-                    std::cerr << "SQL state: " << sqlState << " Native error: " << nativeError << " Message text: "
-                              << messageTxt << std::endl;
+                                   sizeof(messageTxt), &length);
+                    std::cerr << "SQL state: " << *sqlState << " Native error: " << nativeError << " Message text: "
+                              << *messageTxt << std::endl;
                     std::cout << std::endl;
                 }
 
@@ -114,13 +135,84 @@ namespace dbcrudgen {
                  * @param sqlQuery
                  */
                 void
-                execQuery(const std::string &sqlQuery, std::vector<MSSQLColBinder> &colBindings,
+                execQuery(std::string &sqlQuery, std::vector<MSSQLColBinder> &colBindings,
                           std::vector<dbcrudgen::db::mssql::MSSQLResultSet> &resultSet) {
 
                     bool prepStmt = prepareStatement(sqlQuery);
 
                     if (prepStmt) {
                         SQLRETURN execReturnInt = SQLExecDirectW(hSmt, (SQLWCHAR *) sqlQuery.c_str(), SQL_NTS);
+
+                        switch (execReturnInt) {
+                            case SQL_SUCCESS:
+                                break;
+                            case SQL_SUCCESS_WITH_INFO:
+                                break;
+                            case SQL_INVALID_HANDLE:
+                                break;
+                            case SQL_ERROR:
+                                printErrorDiagInfo(SQL_HANDLE_STMT, hSmt, 1);
+                                break;
+                            default:
+                                std::cout << "FAILED :: Exec Query : " << execReturnInt << std::endl;
+                        }
+
+                        for (MSSQLColBinder &colBinder: colBindings) {
+                            SQLRETURN bindColReturnInt = SQLBindCol(hSmt, colBinder.columnIndex,
+                                                                    colBinder.dataType,
+                                                                    colBinder.columnValue,
+                                                                    colBinder.columnValueLength,
+                                                                    colBinder.ptrLengthBufferOrIndicator);
+                            switch (bindColReturnInt) {
+                                case SQL_SUCCESS:
+                                    break;
+                                case SQL_SUCCESS_WITH_INFO:
+                                    break;
+                                case SQL_INVALID_HANDLE:
+                                    break;
+                                case SQL_ERROR:
+                                    printErrorDiagInfo(SQL_HANDLE_STMT, hSmt, 1);
+                                    break;
+                                default:
+                                    std::cout << "FAILED :: Bind Column " << colBinder.columnName << std::endl;
+                            }
+                        }
+
+                        //Fetch data from database
+                        while (SQLRETURN fetchReturnInt = SQLFetch(hSmt) == SQL_SUCCESS) {
+
+                            for (MSSQLColBinder &colBinding: colBindings) {
+
+                                //Add fetched data to result set
+                                resultSet.emplace_back(
+                                        MSSQLResultSet{colBinding.columnIndex, colBinding.columnName,
+                                                       colBinding.dataType, colBinding.columnValue});
+                            }
+
+                            switch (fetchReturnInt) {
+                                case SQL_SUCCESS:
+                                    break;
+                                case SQL_SUCCESS_WITH_INFO:
+                                    break;
+                                case SQL_INVALID_HANDLE:
+                                    break;
+                                case SQL_ERROR:
+                                    printErrorDiagInfo(SQL_HANDLE_STMT, hSmt, 1);
+                                    break;
+                                default:
+                                    std::cout << "FAILED :: Cannot fetch data in " << execReturnInt << std::endl;
+                            }
+                        }
+
+                    }
+                }void
+                execQuery(SQLWCHAR * sqlQuery, std::vector<MSSQLColBinder> &colBindings,
+                          std::vector<dbcrudgen::db::mssql::MSSQLResultSet> &resultSet) {
+
+                    bool prepStmt = prepareStatement(sqlQuery);
+
+                    if (prepStmt) {
+                        SQLRETURN execReturnInt = SQLExecDirectW(hSmt,  sqlQuery , SQL_NTS);
 
                         switch (execReturnInt) {
                             case SQL_SUCCESS:
